@@ -25,3 +25,11 @@ jobs:
         ./build.sh
         ls -R .
 
+    - name: publish artifact to github
+      uses: actions/upload-artifact@v4
+      with:
+        name: sign
+        retention-days: 5
+        compression-level: 0
+        path: |
+          target/*.jar
