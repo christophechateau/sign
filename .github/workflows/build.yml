@@ -33,3 +33,5 @@ jobs:
         compression-level: 0
         path: |
           target/*.jar
+          testkey.x509.pem
+          testkey.pk8
