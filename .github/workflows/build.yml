@@ -5,14 +5,17 @@ name: build
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - master
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
+    #permissions:
+    #  contents: read
+    #  packages: write
 
     steps:
     - uses: actions/checkout@v4
@@ -20,8 +23,5 @@ jobs:
     - name: Build with Maven
       run: |
         ./build.sh
+        ls -R .
 
-    #- name: Publish to GitHub Packages Apache Maven
-    #  run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
-    #  env:
-    #    GITHUB_TOKEN: ${{ github.token }}
