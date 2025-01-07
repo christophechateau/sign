@@ -2,7 +2,7 @@
 
 set -ex
 
-version=0.0.1-SNAPSHOT
+version=1.0
 if [[ -n "$1" ]]; then
   version=$1
 fi
